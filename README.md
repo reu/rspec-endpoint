@@ -1,5 +1,7 @@
 # Rspec::Endpoint
 
+[![Build Status](https://api.travis-ci.org/reu/rspec-endpoint.svg?branch=master)](http://travis-ci.org/reu/rspec-endpoint)
+
 RSpec::Endpoint provides the `endpoint` method as a helper to test HTTP requests. It parses and replaces the description with the informed params.
 
 ## Installation
