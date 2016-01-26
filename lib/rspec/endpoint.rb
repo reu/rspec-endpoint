@@ -1,4 +1,5 @@
 require "rspec/endpoint/version"
+require "rspec/core"
 
 module RSpec
   module Endpoint
