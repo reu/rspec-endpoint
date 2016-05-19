@@ -6,6 +6,14 @@ RSpec.describe RSpec::Endpoint do
       let(:user_id) { 10 }
       let(:comment_id) { 20 }
 
+      before { allow(self).to receive(:post) }
+
+      it "makes a request" do
+        subject
+
+        expect(self).to have_received(:post).with(path, user_id: user_id, comment_id: comment_id)
+      end
+
       describe "#params" do
         subject { params }
         it { is_expected.to include user_id: 10 }

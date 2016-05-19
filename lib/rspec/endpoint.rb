@@ -20,7 +20,7 @@ module RSpec
 
         path_params.each { |param| let(param.to_sym) { send(param.to_sym) } }
 
-        subject { send(method.to_sym, params) }
+        subject { send(method.to_sym, send(:path), params) }
 
         class_eval(&block)
       end
