@@ -8,6 +8,10 @@ RSpec.describe RSpec::Endpoint do
 
       before { allow(self).to receive(:post) }
 
+      it "has a named subject" do
+        expect { make_request }.to_not raise_error
+      end
+
       it "makes a request" do
         subject
 
