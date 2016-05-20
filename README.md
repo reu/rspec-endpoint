@@ -38,3 +38,23 @@ RSpec.descripe UserApi do
   end
 end
 ```
+
+`rspec-endpoint` will define a named subject `make_request` which calls the provided path using the http verb.
+
+```ruby
+RSpec.descripe UserApi do
+  endpoint "POST /users/:user_id" do
+    let(:user_id) { 10 }
+
+    it do
+      # Named subject, same as:
+      #   post path, params
+      #
+      # `params` here is `{ user_id: user_id }`
+      make_request
+
+      expect(response).to be_success
+    end
+  end
+end
+```
